@@ -1,0 +1,12 @@
+#RewriteRule \.(?:jpe?g|gif|png)$ adaptive-images.php [L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*|\/) index.php [QSA,L]
+#RewriteCond %{REQUEST_URI} !adaptive-images\.php
+
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.js|\.css|\.ico)$
+#RewriteRule (.*)  route_apache.php [QSA,L]
+
+#RewriteRule (.*)  index.html [QSA,L]
