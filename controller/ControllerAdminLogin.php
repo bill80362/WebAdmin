@@ -28,7 +28,7 @@ class ControllerAdminLogin
         if($Result){
             $_SESSION["Auth"]["Type"] = "Admin";
             $_SESSION["Auth"]["Data"] = $Result;
-            header("Location: /board");
+            header("Location: /my");
             exit();
         }
         //User
@@ -37,7 +37,7 @@ class ControllerAdminLogin
         if($Result){
             $_SESSION["Auth"]["Type"] = "User";
             $_SESSION["Auth"]["Data"] = $Result;
-            header("Location: /board");
+            header("Location: /my");
             exit();
         }
         //

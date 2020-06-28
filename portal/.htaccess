@@ -6,7 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule (.*|\/) index.php [QSA,L]
 #RewriteCond %{REQUEST_URI} !adaptive-images\.php
 
-RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.js|\.css|\.ico)$
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.js|\.css|\.ico|\.woff2|\.woff)$
 #RewriteRule (.*)  route_apache.php [QSA,L]
 
 #RewriteRule (.*)  index.html [QSA,L]

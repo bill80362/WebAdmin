@@ -13,14 +13,14 @@ class ControllerAdmin
         $this->oMiddleware->AuthGuardSession("Admin");
     }
 
-    public function board(){
-        //Middle Var
-        $AuthType = $this->oMiddleware->AuthType;
-        $AuthInfo = $this->oMiddleware->AuthInfo;
-
-
-        include VIEW_PATH."/admin/board.php";
-    }
+//    public function board(){
+//        //Middle Var
+//        $AuthType = $this->oMiddleware->AuthType;
+//        $AuthInfo = $this->oMiddleware->AuthInfo;
+//
+//
+//        include VIEW_PATH."/admin/board.php";
+//    }
 
 
 }

@@ -17,13 +17,16 @@
     }
 </style>
 
+<!--<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">-->
+
+
 <body class="bg-light">
 
 <? include VIEW_PATH."/include/_nav.php"; ?>
 
 <? include VIEW_PATH."/admin/user/_sub_nav.php"; ?>
 
-<main role="main" class="container">
+<main role="main" class="container-fluid">
 
     <div class="p-3 bg-white rounded shadow-sm">
         <h6 class="pb-2 mb-0">搜尋條件</h6>
@@ -95,6 +98,8 @@
 </main>
 
 <? include VIEW_PATH."/include/_js_src.php"; ?>
+
+<!--<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>-->
 
 
 <? include VIEW_PATH."/include/_footer.php"; ?>

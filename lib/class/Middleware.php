@@ -3,6 +3,7 @@
 
 class Middleware
 {
+    public $ReqData;
     public $AuthType;
     public $AuthInfo;
 
@@ -24,9 +25,14 @@ class Middleware
             $this->AuthInfo = $_SESSION["Auth"]["Data"];
         }else{
             session_destroy();
-            header("Location: /login");
+            header("Location: /");
             exit("Login First Please!");
         }
+    }
+    //抓取JSON參數
+    public function getReqJsonData(){
+        Middleware::$ReqData = json_decode(file_get_contents("php://input"), true);
+        return Middleware::$ReqData;
     }
 
 

@@ -17,9 +17,6 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/report">Bonus報表</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/make">進行結算</a>
-            </li>
         </ul>
 
     </div>

@@ -1,29 +1,12 @@
 <? include VIEW_PATH."/include/_header.php"; ?>
 
-<style>
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-        }
-    }
-</style>
-
 <body class="bg-light">
 
 <? include VIEW_PATH."/include/_nav.php"; ?>
 
 <? include VIEW_PATH."/admin/order/_sub_nav.php"; ?>
 
-<main role="main" class="container">
+<main role="main" class="container-fluid">
 
     <div class="p-3 bg-white rounded shadow-sm">
         <h6 class="pb-2 mb-0">搜尋條件</h6>

@@ -27,13 +27,11 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/order/delete', 'ControllerOrder@delete');
 
     //Bonus報表
-    $r->addRoute('GET', '/order/report', 'ControllerReport@report');
+    $r->addRoute('GET', '/report', 'ControllerReport@report');
+    $r->addRoute('POST', '/report/data', 'ControllerReport@reportData');
 
     //結算
-    $r->addRoute('GET', '/order/make', 'ControllerReport@make');
-
-    //登入後介面
-    $r->addRoute('GET', '/board', 'ControllerAdmin@board');
+    $r->addRoute('GET', '/report/make', 'ControllerReport@make');
 
     //
     $r->addGroup('/admin', function (FastRoute\RouteCollector $r) {
