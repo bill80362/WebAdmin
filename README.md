@@ -6,3 +6,4 @@
  - config設一下 
  - lib model DBconn.php補一下
  - lib class PubFunction.php補一下
+ - Bonus報表是Bootstrap Table，功能較完善
