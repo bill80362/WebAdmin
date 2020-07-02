@@ -1,5 +1,8 @@
 <? include VIEW_PATH."/include/_header.php"; ?>
 
+<link rel="stylesheet" href="/css/bootstrap-table.min.css">
+<link rel="stylesheet" href="/css/all.min.css">
+
 <body class="bg-light">
 
 <? include VIEW_PATH."/include/_nav.php"; ?>
@@ -37,56 +40,49 @@
 
         </form>
 
-            <h6 class="border-bottom border-gray pb-2 mb-0">會員列表</h6>
-            <div class="media text-muted pt-3">
-                <table class="table table-striped ">
-                    <thead class="table-primary">
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">名稱</th>
-                            <th scope="col">帳號</th>
-                            <th scope="col">電話</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">介紹人</th>
-                            <th scope="col">訂購日期</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>陳大尾</td>
-                        <td>Bill</td>
-                        <td>0912-345678</td>
-                        <td>bill@gmail.com</td>
-                        <td>Gate</td>
-                        <td>2020-06-24</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>陳中尾</td>
-                        <td>Andy</td>
-                        <td>0912-345678</td>
-                        <td>bill@gmail.com</td>
-                        <td>Gate</td>
-                        <td>2020-06-24</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>陳小尾</td>
-                        <td>Bird</td>
-                        <td>0912-345678</td>
-                        <td>bill@gmail.com</td>
-                        <td>Gate</td>
-                        <td>2020-06-24</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+        <h5 class="pb-2 mb-0">訂購列表</h5>
+        <table id="table" class="table table-striped"
+               data-show-export="true"
+               data-show-columns="true"
+               data-search="true"
+               data-mobile-responsive="true"
+               data-check-on-init="true"
+        >
+            <thead class="table-dark">
+            <tr>
+                <th data-field="id" data-sortable="true">ID</th>
+                <th data-field="name" data-sortable="true">名稱</th>
+                <th data-field="account" data-sortable="true">帳號</th>
+                <th data-field="phone" data-sortable="true">電話</th>
+                <th data-field="email" data-sortable="true">Email</th>
+                <th data-field="intro" data-sortable="true">介紹人</th>
+                <th data-field="new_time" data-sortable="true">訂購日期</th>
+                <th data-field="price" data-sortable="true">總金額</th>
+                <th data-field="order_data" data-sortable="true">訂購商品</th>
+            </tr>
+            </thead>
+        </table>
 
     </div>
 </main>
 
 <? include VIEW_PATH."/include/_js_src.php"; ?>
 
+<script src="/js/bootstrap-table.min.js"></script>
+<script src="/js/tableExport.min.js"></script>
+<script src="/js/bootstrap-table-export.min.js"></script>
+
+<script>
+    //要傳遞的參數json
+    var obj = { name: "John", age: 30, city: "New York" };
+
+    $('#table').bootstrapTable({
+        exportTypes: ['csv', 'txt', 'excel'],
+        url:'/order/data',
+        method: 'post',
+        queryParams:obj,
+    })
+
+</script>
 
 <? include VIEW_PATH."/include/_footer.php"; ?>

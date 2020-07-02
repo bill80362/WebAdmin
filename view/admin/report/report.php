@@ -1,8 +1,7 @@
 <? include VIEW_PATH."/include/_header.php"; ?>
 
 <link rel="stylesheet" href="/css/bootstrap-table.min.css">
-    <link rel="stylesheet" href="/css/all.min.css">
-
+<link rel="stylesheet" href="/css/all.min.css">
 
 <body class="bg-light">
 
@@ -26,23 +25,23 @@
         </form>
 
 
-        <div >
-            <table id="table" class="table table-striped"
-                   data-show-export="true"
-                   data-show-columns="true"
-                   data-search="true"
-                   data-mobile-responsive="true"
-                   data-check-on-init="true"
-                >
-                <thead class="table-dark">
+        <h5 class="pb-2 mb-0">報表</h5>
+        <table id="table" class="table table-striped"
+               data-show-export="true"
+               data-show-columns="true"
+               data-search="true"
+               data-mobile-responsive="true"
+               data-check-on-init="true"
+            >
+            <thead class="table-dark">
                 <tr>
                     <th data-field="date" data-sortable="true">日期</th>
                     <th data-field="name" data-sortable="true">帳號</th>
                     <th data-field="price" data-sortable="true">Bonus</th>
                 </tr>
-                </thead>
-            </table>
-        </div>
+            </thead>
+        </table>
+
 
     </div>
 </main>
@@ -50,16 +49,20 @@
 <? include VIEW_PATH."/include/_js_src.php"; ?>
 
 <script src="/js/bootstrap-table.min.js"></script>
-<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
+<script src="/js/tableExport.min.js"></script>
+<script src="/js/bootstrap-table-export.min.js"></script>
 
 <script>
+    //要傳遞的參數json
+    var obj = { name: "John", age: 30, city: "New York" };
+
     $('#table').bootstrapTable({
         exportTypes: ['csv', 'txt', 'excel'],
         url:'/report/data',
         method: 'post',
-        queryParams:'aa=aa&bb=bb',
+        queryParams:obj,
     })
+
 </script>
 
 <? include VIEW_PATH."/include/_footer.php"; ?>

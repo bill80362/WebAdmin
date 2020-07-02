@@ -18,13 +18,17 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     //會員管理
     $r->addRoute('GET', '/user/list', 'ControllerUser@list');
     $r->addRoute('GET', '/user/new', 'ControllerUser@new');
+    $r->addRoute('POST', '/user/data', 'ControllerUser@getDataList');
 
+    $r->addRoute('GET', '/user/update/{id:\d+}', 'ControllerUser@getData');
+    $r->addRoute('POST', '/user/update/', 'ControllerUser@updateData');
 
     //訂單管理
     $r->addRoute('GET', '/order/list', 'ControllerOrder@list');
     $r->addRoute('GET', '/order/new', 'ControllerOrder@new');
     $r->addRoute('GET', '/order/update', 'ControllerOrder@update');
     $r->addRoute('GET', '/order/delete', 'ControllerOrder@delete');
+    $r->addRoute('POST', '/order/data', 'ControllerOrder@getData');
 
     //Bonus報表
     $r->addRoute('GET', '/report', 'ControllerReport@report');
